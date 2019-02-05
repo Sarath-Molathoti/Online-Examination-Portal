@@ -3,6 +3,8 @@
  session_start();
  $username = $_SESSION['username'];
  ?>
+ 
+
  <!DOCTYPE html>
  <html>
  <head>
@@ -60,7 +62,7 @@
 			8. Blank sheets for rough work will be provided, if required.</br>
 
  		</p>
- 		<a href="quiz.php" class="start"><b>Start Quiz</b></a>
+ 		<a href="first.php" class="start"><b>Start Quiz</b></a>
  	</div>
  	
  

@@ -1,8 +1,20 @@
 <?php
   include 'login_header.php';
   require 'db_connect.php';
-  $result=mysqli_query( $con, "SELECT * FROM questions WHERE TYPEID='1' ") or die("Could not execute query: " .mysqli_error($con));
-  $row=mysqli_fetch_array($result);
+ // require 'time.js';
+ 
+  session_start();
+  if (isset($_POST['next_btn'])) {
+  $_SESSION['counter']++;
+  }
+  elseif(isset($_POST['pre_btn'])){
+  	 $_SESSION['counter']--;
+  }else{
+     $_SESSION['counter']++;
+  }
+  $no = $_SESSION['counter'];
+  $result=mysqli_query( $con, "SELECT * FROM questions WHERE QID='$no' ") or die("Could not execute query: " .mysqli_error($con));
+  $row=mysqli_fetch_assoc($result);
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,39 +33,46 @@
 	
 </head>
 <body>
+	<div id="response"></div>
 	
 	<div class="qns">
-		<p id="timer"></p>
+		
+		<form  name="myform" action="quiz.php" method="POST">
+		
 		<table>
-			<tr><td><?php echo $row['QID'].". ".$row['QUESTION']?></td></tr>
-			<tr><td><input type="radio"><?php echo $row['ANS1']?></td></tr>
-			<tr><td><input type="radio"><?php echo $row['ANS2']?></td></tr>
-			<tr><td><input type="radio"><?php echo $row['ANS3']?></td></tr>
-			<tr><td><input type="radio"><?php echo $row['ANS4']?></td></tr>
-			<tr><td><input type="button" value="Next Question" onclick="func()"></td></tr>
+			<tr><td><?php echo $row['QID'].'. '.$row['QUESTION']; ?></td></tr>
+			<tr><td><input type='radio' name="choice"><?php echo $row['ANS1']; ?></td></tr>
+			<tr><td><input type='radio' name="choice"><?php echo $row['ANS2']; ?></td></tr>
+			<tr><td><input type='radio' name="choice"><?php echo $row['ANS3']; ?></td></tr>
+			<tr><td><input type='radio' name="choice"><?php echo $row['ANS4']; ?></td></tr>
+			<tr><td><button name="next_btn">Next Question</button></td></tr>
+			<tr><td><button name="pre_btn">Previous Question</button></td></tr>
 		</table>
+	</form>
+	
 	</div>
+	
 </body>
 <script type="text/javascript">
-		var s=59;
-		var m=1;
-		
-		function func1(){
-			document.getElementById("timer").innerHTML = m + " : " + s;
-			s--;
-		}
-		function func2(){
-			s = 59;
-			document.getElementById("timer").innerHTML = m + " : " + s;
-			m--;
-		}
-		var x = setInterval('func1()',1000);
-		var y = setInterval('func2()',60000);
-		function xx(){
-			clearInterval(x);
-			clearInterval(y);
-		}
-		setTimeout('xx()',120000);
+	var x = setInterval(fun1,1000);
+	setTimeout('xx()',60000);
+	function fun1(){
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.open("GET","response.php",false);
+		xmlhttp.send(null);
+		var str = document.getElementById("response").innerHTML=xmlhttp.responseText;
+		/*if(str.slice(7,9) == "58"){
+			window.location.href='login.php';
+		}*/
 
-	</script>
+	}
+	function xx(){
+			clearInterval(x);
+			alert("Time Up.Get out of the room");
+			window.location.href='login.php';
+			//clearInterval(y);
+		}
+		
+</script>
+
 </html>

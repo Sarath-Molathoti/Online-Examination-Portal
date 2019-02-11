@@ -5,28 +5,31 @@
 
 <style type="text/css">
 	html, body, {
-    position:fixed;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
+    margin: 0px;
+    padding: 0px;
 	}
-	a {
+	.navigation_bar a {
 		text-decoration: none;
 		margin-left: 35px;
 		font-size: 20px;
 		color: white;
-		margin-top: 30px;
 	}
-	a:hover{
+	.navigation_bar a:hover{
 		text-decoration: none;
-		background-color: #00ff00;
+		background-color: cyan;
 		padding: 10px;
+		color: black;
+		border-radius: 5px;
 	}
     #home{
     	margin-left: 700px;
     }
 	.navigation_bar{
+		padding: 0px;
+		margin: 0px;
+		position: fixed;
+		top: 0px;
+		width: 100%;
 		padding-top: 22px;
 		height: 50px;
 		background-color: #800080;
@@ -37,11 +40,12 @@
 </head>
 <body>
 	<div class="navigation_bar">
-		<a href="index.php" target="_blank" id="home">Home</a>
-		<a href="aboutus.php" target="_blank">About Us</a>
-		<a href="terms.php" target="_blank">Terms and Services</a>
-		<a href="login.php" target="_blank">Login</a>
-		<a href="signup.php" target="_blank">SignUp</a>	
+		<a href="index.php" id="home">Home</a>
+		<a href="aboutus.php">About Us</a>
+		<a href="terms.php">Terms and Services</a>
+		<a href="login.php" >Login</a>
+		<a href="signup.php" >Sign Up</a>	
 	</div>
+
 </body>
 </html>

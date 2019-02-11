@@ -10,6 +10,10 @@
  <head>
  	<title>Instructions</title>
  	<style type="text/css">
+ 		body{
+ 			margin: 0px;
+ 			padding: 0px;
+ 		}
  		.instr{
  			background-color: Lavender;
  			margin-left: 200px;

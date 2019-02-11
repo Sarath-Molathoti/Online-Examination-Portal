@@ -3,36 +3,69 @@
 <head>
 <title>Login Form</title>
 <style type="text/css">
-	.login-page{
-		background-color: pink;
-		height: 400px;
-		width: 300px;
-		padding: 15px;
-		margin-top: 50px;
-	}
-	input{
-		border: 2px solid blue;
-		border-radius: 8px;
-		width: 250px;
-		height: 25px;
-		padding: 5px;
-		margin-top: 20px;
-	}
-	button{
-		height: 40px;
-		color: white;
-		background-color: black;
-		padding: 5px;
-		width: 80px;
-		font-size: 20px;
-		margin-left: 10px;
-		margin-top: 20px;
-		border-radius: 8px;
-	}
-	button:hover{
-		background-color: #00ff00;
-		color: black;
-	}
+body{
+	margin: 0px;
+	padding: 0px;
+	background-image: url(cellphone.jpg);
+	background-repeat: none;
+	background-size: cover;
+	color: white;
+}
+.login-page{
+	margin-top: 140px;
+	background-color: rgba(0,0,0,.9);
+	border: 1px solid black;
+	width: 350px;
+	height: 420px;
+	box-sizing: border-box;    /*allows us to include the padding and border in an element's total width and height.*/
+	border-radius: 10px;
+}
+input{
+	border: none;
+	border-bottom: 2px solid white;
+	background: transparent;
+	outline: none;
+	width: 260px;
+	height: 35px;
+	margin-bottom: 20px;
+}
+.login-page p{
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+	padding-left: 45px;
+	font-family: sans-serif;
+}
+input[type="text"],input[type="password"]{
+	color: #fff;
+	font-size: 15px;
+}
+button{
+	width: 260px;
+	background: #fb2525;
+	outline: none;
+	border: none;
+	border-radius: 10px;
+	height: 40px;
+	font-size: 18px;
+	color: white;
+	font-family: sans-serif;
+	margin-bottom: 25px;
+	margin-top: 18px;
+}
+button:hover{
+	background: cyan;
+	color: black;
+	cursor: pointer;
+}
+p a{
+	text-decoration: none;
+	color: darkgray;
+}
+p a:hover{
+	color: red;
+}
+	
 </style>
 </head>
 <body>
@@ -41,13 +74,16 @@
     ?>
 <center>
 <div class="login-page">
-	<h2 style="margin-top: 100px;">Login to Account to take Quiz</h2>
+	<h1>Login </h1>
 <form  name="myform" onsubmit="return check()" action="login_check.php" method="POST">
-      <input type="text" placeholder="Email" name="n_email"></br>
-	  <input type="password" placeholder="Password" name="n_pass"></br>
-	  <button>Login</button>
-	  <p class="message">New User?<a href="signup.html" style="color:black">Sign-up</a></p>
+	  <p>Email</p>
+      <input type="text" placeholder="Enter Email" name="n_email"></br>
+      <p>Password</p>
+	  <input type="password" placeholder="Enter Password" name="n_pass"></br>
+	  <button>Sign In</button></br>	  
 </form>
+      <p><a href="signup.php">Don't have an Account?</a></p></br>
+      <p><a href="forgot.php">Forgot Password?</a></p>
 </div>
 </center>
 					<script>

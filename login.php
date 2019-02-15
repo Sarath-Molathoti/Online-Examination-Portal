@@ -20,7 +20,7 @@ body{
 	box-sizing: border-box;    /*allows us to include the padding and border in an element's total width and height.*/
 	border-radius: 10px;
 }
-input{
+input[type="text"],input[type="password"]{
 	border: none;
 	border-bottom: 2px solid white;
 	background: transparent;
@@ -28,6 +28,16 @@ input{
 	width: 260px;
 	height: 35px;
 	margin-bottom: 20px;
+}
+input[type="checkbox"]{
+	border: 2px solid black;
+	width: 15px;
+	height: 15px;
+}
+.rm{
+	margin-left: -140px;
+	font-size: 18px;
+
 }
 .login-page p{
 	margin: 0px;
@@ -77,9 +87,10 @@ p a:hover{
 	<h1>Login </h1>
 <form  name="myform" onsubmit="return check()" action="login_check.php" method="POST">
 	  <p>Email</p>
-      <input type="text" placeholder="Enter Email" name="n_email"></br>
+      <input type="text" placeholder="Enter Email" id="email" name="n_email" value="<?php if(isset($_COOKIE['email'])){ echo $_COOKIE['email'];}?>"></br>
       <p>Password</p>
-	  <input type="password" placeholder="Enter Password" name="n_pass"></br>
+	  <input type="password" placeholder="Enter Password" id="password" name="n_pass" value="<?php if(isset($_COOKIE['pass'])){ echo $_COOKIE['pass'];}?>"></br>
+	  <div class="rm"><input type="checkbox" name="remember">Remember me</br></div>
 	  <button>Sign In</button></br>	  
 </form>
       <p><a href="signup.php">Don't have an Account?</a></p></br>

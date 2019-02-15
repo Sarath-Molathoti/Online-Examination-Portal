@@ -19,7 +19,7 @@ if($count!=0){
 }
 $result1=mysqli_query($con,"INSERT INTO personal_info(NAME,EMAIL,PASSWORD,DOB,GENDER,MOBILE) VALUES('$p_name','$p_email','$p_password',
          '$p_dob','$p_gender','$p_mobile')");
-$result2=mysqli_query($con,"INSERT INTO educational_info(COLLEGE,BRANCH,YEAR) VALUES ('$p_college','$p_branch','$p_year')");
+$result2=mysqli_query($con,"INSERT INTO educational_info(EMAIL,COLLEGE,BRANCH,YEAR) VALUES ('$p_email','$p_college','$p_branch','$p_year')");
 if(false==$result1 || false==$result2){
 	printf("error :%s\n",mysqli_error($con));
 }

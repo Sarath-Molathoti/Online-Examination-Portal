@@ -52,19 +52,40 @@
 <head>
 	<title>Quiz</title>
 	<style type="text/css">
-		.qns{
-			background-color: Lavender;
+
+		body{
+			margin: 0px;
+			padding: 0px;
+			background-image: url(img8.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		
+		table {
+			background-color: lavender;
 			margin-left: 100px;
-			margin-top: 50px;
-			border: 2px solid blacck;
+			border: 2px solid black;
 			width: 800px;
 			padding: 20px;
+			margin-top: 150px;
 		}
+		.t1{
+			margin-top: -170px;
+			margin-left: 1050px;
+			background-color: rgba(0,0,0,0.9);
+			color: white;
+			font-size: 22px;
+			width: 200px;
+			height: 200px;
+
+		}
+		
 	</style>
 	
 </head>
 <body>
-	<div id="response"></div>
+	<div class="q1">
+	
 	
 	<div class="qns">
 		
@@ -92,7 +113,8 @@
 	</form>
 	
 	</div>
-	
+	<div class="t1">Total Time : 1 Min</br>Time Ends in <div id="response"></div></div>
+</div>	
 </body>
 <script type="text/javascript">
 	var x = setInterval(fun1,1000);

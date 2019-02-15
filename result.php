@@ -1,6 +1,9 @@
 <?php
 session_start();
 require 'db_connect.php';
+$a=$_SESSION['score'];
+$b=$_SESSION['useremail'];
+$marks=mysqli_query( $con, "UPDATE educational_info SET MARKS='$a' WHERE EMAIL='$b' ");
 //echo "correct answers ".$_SESSION['score'];
 //echo "wrong answers".$_SESSION['wrong'];
 //echo "attempted ".$_SESSION['attempted']; 

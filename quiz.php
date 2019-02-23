@@ -82,7 +82,7 @@
 		body{
 			margin: 0px;
 			padding: 0px;
-			background-image: url(img8.jpg);
+			background-image: url(images/img8.jpg);
 			background-repeat: no-repeat;
 			background-size: cover;
 		}

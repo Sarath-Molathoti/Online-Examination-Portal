@@ -6,7 +6,7 @@
 body{
 	margin: 0px;
 	padding: 0px;
-	background-image: url(cellphone.jpg);
+	background-image: url(images/cellphone.jpg);
 	background-repeat: none;
 	background-size: cover;
 	color: white;

@@ -53,9 +53,9 @@
 		<form action="instructions.php" method="POST">
 		<table>
 		<tr>
-			<td><img src="html.png" height="180" width="240" ></td>
-			<td><img src="css.png" height="180" width="240"></td>
-			<td><img src="js.jpg" height="180" width="240" ></td>
+			<td><img src="images/html.png" height="180" width="240" ></td>
+			<td><img src="images/css.png" height="180" width="240"></td>
+			<td><img src="images/js.jpg" height="180" width="240" ></td>
 		</tr>
 		<tr>
 			<td><input type="submit" name="n_html" value="HTML" class="h"></td>	
@@ -65,9 +65,9 @@
 		<tr><td colspan="3"><p></p></td></tr>
         <tr><td colspan="3"></td><p></p></tr></br>
 		<tr>
-			<td><img src="php.png" height="180" width="240" ></td>
-			<td><img src="java.png" height="180" width="240"></td>
-			<td><img src="python.jpg" height="180" width="240" ></td>
+			<td><img src="images/php.png" height="180" width="240" ></td>
+			<td><img src="images/java.png" height="180" width="240"></td>
+			<td><img src="images/python.jpg" height="180" width="240" ></td>
 		</tr>
 		<tr>
 			<td><input type="submit" name="n_php" value="PHP" class="p"></td>	

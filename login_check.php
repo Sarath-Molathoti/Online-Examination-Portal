@@ -3,11 +3,6 @@ require 'db_connect.php';
 session_start();
 $p_email=$_POST["n_email"];
 $p_password=$_POST["n_pass"];
-$_SESSION['counter'] = 0;
-$_SESSION['score'] = 0;
-$_SESSION['wrong'] = 0;
-$_SESSION['attempted'] = 0;
-$_SESSION['not_attempted'] = -1;
 if (isset($_POST['remember'])) {
 	setcookie('email',$p_email,time()+(86400*1));
 	setcookie('pass',$p_password,time()+(86400*1));
@@ -20,7 +15,7 @@ $row = mysqli_num_rows($result);
 		$_SESSION['useremail'] = $rows['EMAIL'];
 		echo "<script>
 				var r=alert('successful login');
- 	 			window.location.href='instructions.php';
+ 	 			window.location.href='categories.php';
  		      </script>";
 	}
 	else{

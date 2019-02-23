@@ -2,6 +2,22 @@
  include 'login_header.php';
  session_start();
  $username = $_SESSION['username'];
+ $_SESSION['counter'] = 1;
+ $_SESSION['score'] = 0;
+ $_SESSION['wrong'] = 0;
+ $_SESSION['wqid'] = 0;
+ $_SESSION['attempted'] = 0;
+ $_SESSION['wrong_or_unanswered'] = 0;
+ $_SESSION['not_attempted'] = -1;
+ if (isset($_POST['n_html'])) {
+ 	$_SESSION['typeid']=1;
+ }elseif (isset($_POST['n_css'])) {
+ 	$_SESSION['typeid']=2;
+ }elseif (isset($_POST['n_javascript'])) {
+ 	$_SESSION['typeid']=3;
+ }elseif (isset($_POST['n_php'])) {
+ 	$_SESSION['typeid']=4;
+ }
  ?>
  
 

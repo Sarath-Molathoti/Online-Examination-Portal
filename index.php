@@ -19,14 +19,15 @@
 		padding-top: 30px;
 		height: 538px;
 	}
-	p{
+	h1{
 		font-size: 40px;
 		color: red;
-		margin-top: 100px;
-		margin-left: 100px;
+		margin-top: 60px;
+		margin-left: 80px;
 	}
 	.buttons{
 		margin-top: 100px;
+		margin-left: 30px;
 	}
 	.buttons a{
 		border: 2px solid gold;
@@ -37,7 +38,7 @@
 		height: 30px;
 		padding: 20px;
 		border-radius: 9px;
-		margin-left: 80px;
+		margin-left: 100px;
 		text-decoration: none;
 	}
 	.buttons a:hover{
@@ -50,10 +51,22 @@
 		border: 2px solid black;
 	}
 	marquee{
-		color: orangered;
+		color: lime;
 		font-size: 40px;
 		font-weight: bold;
 		margin-top: 50px;
+	}
+	.bd{
+		border: 3px solid black;
+		width: 600px;
+		height: 300px;
+		margin-left: 300px;
+		background-color: rgba(0,0,0,0.9);
+		border-radius: 20px;
+		margin-top: 20px;
+		padding-bottom: 20px;
+		padding-right: 20px;
+
 	}
 
 	
@@ -66,13 +79,13 @@
     
 	<div class="home_body">
 		<marquee dir="left">Test your skills here</marquee>
-		<center>
-		<p><b>Online Examination Portal</b></p>
+		<div class="bd">
+		<h1 style="color: red;">Online Examination Portal</h1>
 		<div class="buttons">
 			<a href="signup.php">Sign Up</a>
 			<a href="login.php">Login</a>
 		</div>	
-	    </center>
+	    </div>
 	</div>	
 </body>
 </html>

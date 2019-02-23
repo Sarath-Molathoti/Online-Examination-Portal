@@ -97,12 +97,11 @@
     ::placeholder {
         color: plum;
     }
-	
 </style>
 </head>
 <body>
 	<?php
-      include "header.php";
+      require "header.php";
     ?>
 <center>	
 <form name="myform" onsubmit="return check()" action="register.php" method="POST">
@@ -129,7 +128,7 @@
              <tr><td>College</td><td><input type="text" name="n_college" required="true"></td></tr> 
              <tr><td>Roll No </td><td> <input type="text" name="n_rollno" required="true"></td></tr>  
              <tr><td>Year</td><td>
-             	<select name="n_year" required="true">
+             	<select name="n_year" required="true" placeholder="">
 				          <option value="1st year">1st year</option>
 				          <option value="2nd year">2nd year</option>
 				          <option value="3rd year">3rd year</option>
@@ -137,7 +136,7 @@
 				</select>
              </td></tr>
              <tr><td>Branch</td><td>
-             	<select name="n_branch" required="true">
+             	<select name="n_branch" required="true" placeholder="">
 				          <option value="CSE">CSE</option>
 				          <option value="ECE">ECE</option>
 				          <option value="EEE">EEE</option>

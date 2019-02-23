@@ -13,11 +13,11 @@
 	}
 	a {
 		text-decoration: none;
-		margin-left: 35px;
+		margin-left: 30px;
 		font-size: 20px;
 		color: white;
 		margin-top: 30px;
-		margin-left: 1200px;
+		margin-left: 1100px;
 	}
 	a:hover{
 		text-decoration: none;

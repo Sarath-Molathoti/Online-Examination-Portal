@@ -10,7 +10,7 @@
 	}
 	.navigation_bar a {
 		text-decoration: none;
-		margin-left: 35px;
+		margin-left: 30px;
 		font-size: 20px;
 		color: white;
 	}
@@ -22,7 +22,7 @@
 		border-radius: 5px;
 	}
     #home{
-    	margin-left: 700px;
+    	margin-left: 600px;
     }
 	.navigation_bar{
 		padding: 0px;

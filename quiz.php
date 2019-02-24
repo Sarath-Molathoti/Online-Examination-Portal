@@ -152,29 +152,30 @@
 	</form>
 	
 	</div>
-	<div class="t1">Total Time : 1 Min</br>Time Ends in <div id="response"></div></div>
+	
 </div>	
 </body>
+<div class="t1">Total Time : 1 Min</br>Time Ends in <div id="respo"></div></div>
+
 <script type="text/javascript">
-	var x = setInterval(fun1,1000);
-	setTimeout('xx()',60000);
-	function fun1(){
+//setTimeout('xx()',60000);
+ var x=setInterval(function(){
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.open("GET","response.php",false);
 		xmlhttp.send(null);
-		var str = document.getElementById("response").innerHTML=xmlhttp.responseText;
-		/*if(str.slice(7,9) == "58"){
-			window.location.href='login.php';
-		}*/
-
-	}
-	function xx(){
-			clearInterval(x);
+		var str = document.getElementById("respo").innerHTML=xmlhttp.responseText;
+		if(str.slice(6,8) == "00" && str.slice(3,5) == "00"){
 			alert("Time Up");
-			window.location.href='result.php';
-			//clearInterval(y);
+			window.location.href='quiz_eval.php';
 		}
-		
+	},1000);
+	//function xx(){
+			//clearInterval(x);
+			//alert("Time Up");
+			//window.location.href='quiz_eval.php';
+			//clearInterval(y);
+	//}
+
 </script>
 
 </html>

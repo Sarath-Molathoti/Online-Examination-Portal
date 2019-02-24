@@ -73,7 +73,7 @@ $no=0;
     $no_of_wrong_qns=$_SESSION['wrong_or_unanswered'];
         $wno = 1;
       while ($wno <= $no_of_wrong_qns){
-      $result=mysqli_query( $con, "SELECT * FROM wrong WHERE WQID='$wno' ") or die("Could not execute query: " .mysqli_error($con));
+      $result=mysqli_query( $con, "SELECT * FROM wrong WHERE WQID='$wno' AND EMAIL='$b' ") or die("Could not execute query: " .mysqli_error($con));
       $row=mysqli_fetch_assoc($result);
       $qno=$row['QID'];
       $wtid=$_SESSION['typeid'];

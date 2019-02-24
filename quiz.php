@@ -4,18 +4,19 @@
  
   session_start();
   $typeid=$_SESSION['typeid'];
+  $email=$_SESSION['useremail'];
   $rad_val=5;
  
   if(isset($_POST['next_btn']) || isset($_POST['sub_btn']) || isset($_POST['pre_btn'])){
   	$qid = $_SESSION['counter'];
   	if (isset($_POST['choice'])) {
   		$yourans = $_POST['choice'];
-  		$check=mysqli_query($con,"SELECT * FROM user_answers WHERE TYPEID='$typeid' AND QID='$qid' ");
+  		$check=mysqli_query($con,"SELECT * FROM user_answers WHERE TYPEID='$typeid' AND QID='$qid' AND EMAIL='$email' ");
   		$c=mysqli_num_rows($check);
   		if($c!=0){
-  		    mysqli_query($con,"UPDATE user_answers SET USER_ANS='$yourans' WHERE TYPEID='$typeid' AND QID='$qid' ");
+  		    mysqli_query($con,"UPDATE user_answers SET USER_ANS='$yourans' WHERE TYPEID='$typeid' AND QID='$qid' AND EMAIL='$email' ");
   		}else{
-  		mysqli_query($con,"INSERT INTO user_answers(TYPEID,QID,USER_ANS) VALUES ('$typeid','$qid','$yourans')");
+  		mysqli_query($con,"INSERT INTO user_answers(TYPEID,QID,USER_ANS,EMAIL) VALUES ('$typeid','$qid','$yourans','$email')");
   	    }
   	 	//$_SESSION['attempted']++; 	 	
   	 	/* $result2=mysqli_query($con,"SELECT * FROM questions WHERE TYPEID='$typeid' AND QID='$qid' AND ANS='$yourans' ") or die("Could not execute query: " .mysqli_error($con));
@@ -65,7 +66,7 @@
   $result=mysqli_query( $con, "SELECT * FROM questions WHERE QID='$no' AND TYPEID='$typeid' ") or die("Could not execute query: " .mysqli_error($con));
   $row=mysqli_fetch_assoc($result);
 
-  $result2=mysqli_query($con,"SELECT * FROM user_answers WHERE QID='$no' AND TYPEID='$typeid' ");
+  $result2=mysqli_query($con,"SELECT * FROM user_answers WHERE QID='$no' AND TYPEID='$typeid' AND EMAIL='$email' ");
   $count=mysqli_num_rows($result2);
   if ($count!=0) {
   	$row2=mysqli_fetch_assoc($result2);
